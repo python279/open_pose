@@ -17,7 +17,7 @@ data = {'input_image': encoded_image}
 headers = {'Content-Type': 'application/json'}
 
 # 发送 POST 请求到服务器
-url = 'http://10.12.120.176:5002/infer'  # 根据实际情况修改 URL
+url = 'http://127.0.0.1:5002/infer'  # 根据实际情况修改 URL
 response = requests.post(url, data=json.dumps(data), headers=headers)
 
 # 解析服务器返回的 JSON 数据

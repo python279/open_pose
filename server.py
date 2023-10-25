@@ -13,9 +13,13 @@ open_pose = MyOpenposeDetector.from_pretrained("./checkpoint/models--lllyasviel-
 def infer():
     data = request.get_json()  # 获取 POST 请求中的 JSON 数据
     input_image = data["input_image"]
+
     # 从 base64 解码出图片
     image = Image.open(BytesIO(b64decode(input_image))).convert("RGB")
-    output_image, coco_keypoints = open_pose(image, detect_resolution=768, image_resolution=768,
+    H, W = image.height, image.width
+    detect_resolution = min(H, W, 512)
+    image_resolution = min(H, W)
+    output_image, coco_keypoints = open_pose(image, detect_resolution=detect_resolution, image_resolution=image_resolution,
                                              include_body=True, include_hand=True, include_face=True)
     buffered = BytesIO()
     output_image.save(buffered, format='PNG')
