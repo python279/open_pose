@@ -25,7 +25,7 @@ result = response.json()
 
 # coco openpose 标注数据
 coco_keypoints = result['result']['coco_keypoints']
-print(coco_keypoints)
+print(json.dumps(coco_keypoints))
 
 # 推理结果图像数据
 output_image_data = result['result']['output_image']

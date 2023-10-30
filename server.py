@@ -20,7 +20,7 @@ def infer():
     detect_resolution = min(H, W, 512)
     image_resolution = min(H, W)
     output_image, coco_keypoints = open_pose(image, detect_resolution=detect_resolution, image_resolution=image_resolution,
-                                             include_body=True, include_hand=True, include_face=True)
+                                             include_body=True, include_hand=True, include_face=False, hand_and_face=None)
     buffered = BytesIO()
     output_image.save(buffered, format='PNG')
     output_image = b64encode(buffered.getvalue()).decode('utf-8')

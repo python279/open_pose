@@ -35,6 +35,7 @@ class MyOpenposeDetector(OpenposeDetector):
         print(poses)
         for id, pose in enumerate(poses):
             coco_keypoints["people"].append({
+                "person_id": [-1],
                 "pose_keypoints_2d": [],
                 "hand_left_keypoints_2d": [],
                 "hand_right_keypoints_2d": [],
