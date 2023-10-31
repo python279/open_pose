@@ -50,8 +50,8 @@ class MyOpenposeDetector(OpenposeDetector):
                         coco_keypoints["people"][id]["pose_keypoints_2d"].append(0)
                     else:
                         x, y, score = keypoint.x, keypoint.y, keypoint.score
-                        coco_keypoints["people"][id]["pose_keypoints_2d"].append(x * float(H))
-                        coco_keypoints["people"][id]["pose_keypoints_2d"].append(y * float(W))
+                        coco_keypoints["people"][id]["pose_keypoints_2d"].append(x * float(W))
+                        coco_keypoints["people"][id]["pose_keypoints_2d"].append(y * float(H))
                         coco_keypoints["people"][id]["pose_keypoints_2d"].append(score)
             if pose.left_hand:
                 for keypoint in pose.left_hand:
@@ -61,8 +61,8 @@ class MyOpenposeDetector(OpenposeDetector):
                         coco_keypoints["people"][id]["hand_left_keypoints_2d"].append(0)
                     else:
                         x, y, score = keypoint.x, keypoint.y, keypoint.score
-                        coco_keypoints["people"][id]["hand_left_keypoints_2d"].append(x * float(H))
-                        coco_keypoints["people"][id]["hand_left_keypoints_2d"].append(y * float(W))
+                        coco_keypoints["people"][id]["hand_left_keypoints_2d"].append(x * float(W))
+                        coco_keypoints["people"][id]["hand_left_keypoints_2d"].append(y * float(H))
                         coco_keypoints["people"][id]["hand_left_keypoints_2d"].append(score)
             if pose.right_hand:
                 for keypoint in pose.right_hand:
@@ -72,8 +72,8 @@ class MyOpenposeDetector(OpenposeDetector):
                         coco_keypoints["people"][id]["hand_right_keypoints_2d"].append(0)
                     else:
                         x, y, score = keypoint.x, keypoint.y, keypoint.score
-                        coco_keypoints["people"][id]["hand_right_keypoints_2d"].append(x * float(H))
-                        coco_keypoints["people"][id]["hand_right_keypoints_2d"].append(y * float(W))
+                        coco_keypoints["people"][id]["hand_right_keypoints_2d"].append(x * float(W))
+                        coco_keypoints["people"][id]["hand_right_keypoints_2d"].append(y * float(H))
                         coco_keypoints["people"][id]["hand_right_keypoints_2d"].append(score)
             if pose.face:
                 for keypoint in pose.face:
@@ -83,8 +83,8 @@ class MyOpenposeDetector(OpenposeDetector):
                         coco_keypoints["people"][id]["face_keypoints_2d"].append(0)
                     else:
                         x, y, score = keypoint.x, keypoint.y, keypoint.score
-                        coco_keypoints["people"][id]["face_keypoints_2d"].append(x * float(H))
-                        coco_keypoints["people"][id]["face_keypoints_2d"].append(y * float(W))
+                        coco_keypoints["people"][id]["face_keypoints_2d"].append(x * float(W))
+                        coco_keypoints["people"][id]["face_keypoints_2d"].append(y * float(H))
                         coco_keypoints["people"][id]["face_keypoints_2d"].append(score)
 
         return coco_keypoints

@@ -14,7 +14,7 @@ RUN mkdir checkpoint \
     && curl -o checkpoint/models--lllyasviel--Annotators.zip "http://mirrors.uat.enflame.cc/enflame.cn/maas/open_pose/models--lllyasviel--Annotators.zip" \
     && unzip checkpoint/models--lllyasviel--Annotators.zip -d checkpoint \
     && rm checkpoint/models--lllyasviel--Annotators.zip
-RUN pip3 install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple \
-    && pip3 install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip3 install --upgrade pip -i http://artifact.enflame.cn/artifactory/api/pypi/pypi-remote/simple --trusted-host artifact.enflame.cn \
+    && pip3 install --no-cache-dir -r requirements.txt -i http://artifact.enflame.cn/artifactory/api/pypi/pypi-remote/simple --trusted-host artifact.enflame.cn
 
 ENTRYPOINT ["python3", "server.py"]
